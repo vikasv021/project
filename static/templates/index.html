@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Face Detection System</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #d32e2e;
+        }
+        h1 {
+            color: #afadad;
+        }
+        img {
+            margin-top: 20px;
+            border: 4px solid #0b9710;
+            border-radius: 10px;
+        }
+        .container {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Face Detection Web App</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" required>
+        <br><br>
+        <input type="submit" value="Detect Faces">
+    </form>
+
+    {% if image %}
+        <h2>Detection Result:</h2>
+        <img src="{{ image }}" width="500">
+    {% endif %}
+</div>
+
+</body>
+</html>
