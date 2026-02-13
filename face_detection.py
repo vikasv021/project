@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import cv2
 import matplotlib.pyplot as plt
 
@@ -60,7 +60,7 @@ plt.title("Face Detection")
 plt.axis("off")
 plt.show()
 
-=======
+
 import cv2
 import matplotlib.pyplot as plt
 
@@ -103,7 +103,8 @@ gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 # Load face detector
 face_cascade = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
 
-faces = face_cascade.detectMultiScale(gray, 1.3, 5)
+faces = face_cascade.detectMultiScale(gray, scaleFactor=1.05, minNeighbors=4)
+
 
 print("Number of faces detected:", len(faces))
 
@@ -121,5 +122,3 @@ plt.imshow(img_rgb)
 plt.title("Face Detection")
 plt.axis("off")
 plt.show()
-
->>>>>>> bd435bd331fc4b9ac95462651b8dc939df95fc48
